@@ -1,0 +1,20 @@
+FROM python:3.9.4
+WORKDIR /agent
+
+ENV K8S_NAMESPACE syy
+ENV PAAS_NAMESPACE syy
+ENV PAAS_TENANT syy
+ENV PAAS_VERSION v1
+ENV NACOS_GROUP DEFAULT_GROUP
+ENV NACOS_NAMESPACE MESH
+ENV INSTANCE_NAME ''
+ENV CLUSTER_ID CID-585ae638bd68
+ENV OAP_SERVER 192.168.2.142:31082
+
+ADD python-demo-client.py /agent
+ADD requirements.txt /agent
+
+RUN pip3 install -r requirements.txt
+
+EXPOSE 8081
+CMD python3 python-demo-client.py

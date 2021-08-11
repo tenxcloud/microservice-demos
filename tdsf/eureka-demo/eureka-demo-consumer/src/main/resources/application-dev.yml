@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: eureka-demo-consumer
+eureka:
+  instance:
+    prefer-ip-address: false
+    ip-address: 127.0.0.1
+    hostname: eureka-demo-consumer
+    metadata-map:
+      isjoin: false
+      deploy: container
+      svcname: default:eureka-demo-consumer
+  client:
+    register-with-eureka: true
+    service-url.defaultZone: http://127.0.0.1:8761/eureka/
+    fetch-registry: true
+#设置超时60s，模拟故障模拟的延时
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 60000
+        readTimeout: 60000

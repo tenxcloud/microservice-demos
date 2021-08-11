@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: zookeeper-dubbo-demo-provider
+demo:
+  service:
+    version: 1.0.0
+    group: zookeeper-dubbo
+
+dubbo:
+  protocol:
+    port: 20880
+    name: dubbo
+  registry:
+    address: zookeeper://127.0.0.1:2181
+    timeout: 100000
+  provider:
+    parameters:
+      isjoin: false
+      deploy: container
+      svcname: default:zookeeper-dubbo-demo-provider
+
