@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: ${MESH_SVC_NAME:nacos-dubbo-demo-consumer}
+services:
+  hello:
+    version: 1.0.0
+    group: nacos-dubbo
+  test:
+    version: 1.0.0
+    group: nacos-dubbo
+dubbo:
+  protocol:
+    port: 20880
+    name: dubbo
+  registry:
+    address: nacos://${NACOS_ADDR}?username=${NACOS_USERNAME}&password=${NACOS_PASSWORD}
+    parameters:
+      namespace: ${NACOS_NAMESPACE}
+      group: ${NACOS_GROUP}
+      ignoreCheckKeys: username,password
+  consumer:
+    retries: ${CONSUMER_RETRIES:0}
+    check: false
+    parameters:
+      isjoin: ${MESH_SWITCHER_MESH}
+      deploy: ${DEPLOY_TYPE}
+      svcname: ${K8S_NAMESPACE}:${MESH_SVC_NAME}
+      paas-name: ${MESH_SVC_NAME:nacos-dubbo-demo-consumer}
+      paas-ns: ${K8S_NAMESPACE:apm}
+      service-type: Dubbo

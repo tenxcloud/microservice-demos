@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: nacos-dubbo-demo-consumer
+services:
+  hello:
+    version: 1.0.0
+    group: nacos-dubbo
+  test:
+    version: 1.0.0
+    group: nacos-dubbo
+dubbo:
+  consumer:
+    retries: 3
+    check: false
+    parameters:
+      isjoin: true
+      deploy: container
+      svcname: default:nacos-dubbo-demo-consumer
+  registry:
+    address: nacos://127.0.0.1:8848?username=nacos&password=nacos
+    parameters:
+      namespace: public
+      ignoreCheckKeys: username,password
