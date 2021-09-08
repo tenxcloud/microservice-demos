@@ -20,6 +20,7 @@
     <modules>
         <module>eureka-demo-consumer</module>
         <module>eureka-demo-provider</module>
+        <module>eureka-server</module>
     </modules>
 
     <dependencyManagement>
