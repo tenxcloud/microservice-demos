@@ -28,4 +28,24 @@ public class TestServiceImpl implements TestService {
         }
         return String.format("MESH_SVC_NAME:[%s], MESH_SVC_VERSION:[%s], Provider [%s] : Hello, %s, time: %s ", System.getenv("MESH_SVC_NAME"), System.getenv("MESH_SVC_VERSION"), applicationName, msg, new Date());
     }
+
+    @Override
+    public String slowCall(String msg, Long interval) {
+        RpcContext rpcContext = RpcContext.getContext();
+        System.out.println(rpcContext.getAttachments());
+        log.info(msg);
+        if ("500".equals(msg) || "503".equals(msg) || "400".equals(msg)) {
+            throw new RuntimeException("mock exception :" + msg);
+        }
+        if (interval > 0) {
+            try {
+                log.info("执行等待中。。。。！");
+                Thread.sleep(interval);
+            } catch (InterruptedException e) {
+                throw new RuntimeException("test time interval mock exception :" + msg + " 间隔：" + interval);
+            }
+        }
+        return String.format("MESH_SVC_NAME:[%s], MESH_SVC_VERSION:[%s], Provider [%s] : Hello, %s, time: %s ", System.getenv("MESH_SVC_NAME"), System.getenv("MESH_SVC_VERSION"), applicationName, msg, new Date());
+    }
+
 }
