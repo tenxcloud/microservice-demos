@@ -11,4 +11,12 @@ public interface TestService {
      * @return
      */
     String test(String msg);
+
+    /**
+     * api
+     * @param msg
+     * @param interval
+     * @return
+     */
+    String slowCall(String msg, Long interval);
 }
