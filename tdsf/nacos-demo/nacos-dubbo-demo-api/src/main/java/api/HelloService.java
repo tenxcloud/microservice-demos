@@ -11,4 +11,12 @@ public interface HelloService {
      * @return
      */
     String sayHello(String msg);
+
+    /**
+     * api
+     * @param msg
+     * @param interval
+     * @return
+     */
+    String slowCall(String msg, Long interval);
 }

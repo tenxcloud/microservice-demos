@@ -28,4 +28,9 @@ public class HelloController {
     public String test(@RequestParam String msg) {
         return testService.test(msg);
     }
+
+    @GetMapping("/slow-call")
+    public String sayHello(@RequestParam String msg, @RequestParam Long interval) {
+        return helloService.slowCall(msg, interval);
+    }
 }

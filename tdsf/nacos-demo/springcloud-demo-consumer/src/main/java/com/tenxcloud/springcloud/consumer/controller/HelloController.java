@@ -20,4 +20,9 @@ public class HelloController {
     public String sayHello(@RequestParam String msg) {
         return helloService.hello(msg);
     }
+
+    @GetMapping("/slow-call")
+    public String sayHello(@RequestParam String msg, @RequestParam Long interval) {
+        return helloService.slowCall(msg, interval);
+    }
 }

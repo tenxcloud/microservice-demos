@@ -13,5 +13,7 @@ public interface HelloService {
 
     @GetMapping(value = "hello")
     String hello(@RequestParam(value = "msg") String msg);
+    @GetMapping(value = "slow-call")
+    String slowCall(@RequestParam(value = "msg") String msg, @RequestParam(value = "interval") Long interval);
 
 }
