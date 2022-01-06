@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: springboot-http-demo
+management:
+  endpoints:
+    web:
+      base-path: /
+      exposure:
+        include: '*'

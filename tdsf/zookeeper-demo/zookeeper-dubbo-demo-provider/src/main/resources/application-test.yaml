@@ -16,5 +16,5 @@ dubbo:
     parameters:
       isjoin: ${MESH_SWITCHER_MESH}
       deploy: ${DEPLOY_TYPE}
-      svcname: ${K8S_NAMESPACE}:${MESH_SVC_NAME}
+      svcname: ${PAAS_NS}:${MESH_SVC_NAME}
 

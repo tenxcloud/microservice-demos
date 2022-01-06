@@ -1,4 +1,4 @@
-FROM 192.168.1.52/system_containers/oraclejdk:8u291
+FROM 172.22.50.227/system_containers/oraclejdk:8u231
 
 MAINTAINER sparkxiong shi.xiong@tenxcloud.com
 

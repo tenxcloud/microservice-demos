@@ -60,7 +60,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <imageName>${docker.image.prefix}/${project.artifactId}:${docker.image.tag}</imageName>
+                    <imageName>${docker.image.prefix}/${project.artifactId}:${docker.image.tag}-${maven.build.timestamp}</imageName>
                     <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
                     <resources>
                         <resource>

@@ -3,9 +3,9 @@ spring:
     name: eureka-demo-provider
 eureka:
   instance:
-    prefer-ip-address: false
+    prefer-ip-address: true
     ip-address: 127.0.0.1
-    hostname: eureka-demo-provider
+#    hostname: eureka-demo-provider
     metadata-map:
       isjoin: false
       deploy: container
