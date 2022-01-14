@@ -18,8 +18,8 @@
     </properties>
 
     <modules>
-        <module>eureka-demo-consumer</module>
-        <module>eureka-demo-provider</module>
+        <module>eureka-consumer</module>
+        <module>eureka-provider</module>
         <module>eureka-server</module>
     </modules>
 

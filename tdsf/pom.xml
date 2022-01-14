@@ -24,7 +24,7 @@
         <docker.plugin.version>1.2.0</docker.plugin.version>
         <docker.image.prefix>172.22.50.227/system_containers</docker.image.prefix>
         <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
-        <docker.image.tag>v5.3.0-release</docker.image.tag>
+        <docker.image.tag>v5.3.0</docker.image.tag>
     </properties>
 
     <repositories>
