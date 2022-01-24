@@ -8,9 +8,7 @@ import io.netty.util.CharsetUtil;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * @author wangshixiong
- * @Classname MyHandler
- * @Date 2021/4/16 15:25
+ * @author zhangshuo
  */
 @ChannelHandler.Sharable
 @Slf4j

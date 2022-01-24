@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
- * @author wangshixiong
- * @date 2021-07-06 12:58 上午
+ * @author zhangshuo
  */
 @FeignClient(value = "eureka-provider")
 public interface HelloService {

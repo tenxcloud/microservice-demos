@@ -9,8 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import java.util.Date;
 
 /**
- * @author wangshixiong
- * @date 2020-12-15 2:55 下午
+ * @author zhangshuo
  */
 @Slf4j
 @DubboService(version = "${demo.service.version}", group = "${demo.service.group}")

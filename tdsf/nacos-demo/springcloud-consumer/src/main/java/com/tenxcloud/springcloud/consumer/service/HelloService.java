@@ -5,8 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
- * @author wangshixiong
- * @date 2020-12-15 5:41 下午
+ * @author zhangshuo
  */
 @FeignClient(value = "springcloud-provider")
 public interface HelloService {

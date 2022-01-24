@@ -1,5 +1,4 @@
 FROM golang as builder
-MAINTAINER shixiong.tenxcloud.com
 
 ENV K8S_NAMESPACE syy
 ENV PAAS_NAMESPACE syy
