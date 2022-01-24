@@ -1,6 +1,6 @@
 spring:
   application:
-    name: springcloud-demo-provider
+    name: springcloud-provider
   cloud:
     nacos:
       discovery:
@@ -9,6 +9,6 @@ spring:
         metadata:
           isjoin: true
           deploy: container
-          svcname: default:springcloud-demo-provider
+          svcname: default:springcloud-provider
         username: nacos
         password: nacos

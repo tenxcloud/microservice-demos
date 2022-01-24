@@ -97,7 +97,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <imageName>${docker.image.prefix}/${project.artifactId}:${docker.image.tag}</imageName>
+                    <imageName>${docker.image.prefix}/${project.artifactId}:${docker.image.tag}-${maven.build.timestamp}-zhang</imageName>
                     <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
                     <resources>
                         <resource>
@@ -110,5 +110,16 @@
             </plugin>
         </plugins>
     </build>
+<!--    平台私服地址-->
+<!--    私服地址-->
+    <repositories>
+        <repository>
+            <id>tenxcloud-group</id>
+            <url>http://192.168.2.120:7777/repository/tenxcloud-group/</url>
+            <snapshots><enabled>true</enabled></snapshots>
+        </repository>
+    </repositories>
+
+
 
 </project>

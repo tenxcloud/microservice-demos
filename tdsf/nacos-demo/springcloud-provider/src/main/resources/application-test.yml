@@ -12,8 +12,8 @@ spring:
         metadata:
           isjoin: ${MESH_SWITCHER_MESH}
           deploy: ${DEPLOY_TYPE}
-          svcname: ${PAAS_NS}:${MESH_SVC_NAME:springcloud-demo-provider}
+          svcname: ${PAAS_NS}:${MESH_SVC_NAME:springcloud-provider}
           pod-name: ${HOSTNAME}
-          paas-name: ${MESH_SVC_NAME:springcloud-demo-provider}
+          paas-name: ${MESH_SVC_NAME:springcloud-provider}
           paas-ns: ${PAAS_NS}
           service-type: SpringCloud
