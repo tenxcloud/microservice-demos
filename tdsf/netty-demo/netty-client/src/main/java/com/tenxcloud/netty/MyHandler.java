@@ -7,9 +7,7 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.CharsetUtil;
 
 /**
- * @author wangshixiong
- * @Classname MyHandler
- * @Date 2020/4/16 15:25
+ * @author zhangshuo
  */
 @ChannelHandler.Sharable
 public class MyHandler extends ChannelInboundHandlerAdapter {

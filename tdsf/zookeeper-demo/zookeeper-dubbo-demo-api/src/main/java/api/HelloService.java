@@ -1,8 +1,7 @@
 package api;
 
 /**
- * @author wangshixiong
- * @date 2020-12-15 1:51 下午
+ * @author zhangshuo
  */
 public interface HelloService {
     /**

@@ -21,10 +21,10 @@
     </properties>
 
     <modules>
-        <module>springcloud-demo-consumer</module>
-        <module>springcloud-demo-provider</module>
-        <module>nacos-dubbo-demo-provider</module>
-        <module>nacos-dubbo-demo-consumer</module>
+        <module>springcloud-consumer</module>
+        <module>springcloud-provider</module>
+        <module>nacos-dubbo-provider</module>
+        <module>nacos-dubbo-consumer</module>
         <module>nacos-dubbo-demo-api</module>
     </modules>
 

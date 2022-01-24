@@ -1,8 +1,7 @@
 package api;
 
 /**
- * @author wangshixiong
- * @date 2020-12-15 2:38 下午
+ * @author zhangshuo
  */
 public interface TestService {
     /**
@@ -11,4 +10,5 @@ public interface TestService {
      * @return
      */
     String test(String msg);
+    String slowCall(String msg,long interval);
 }

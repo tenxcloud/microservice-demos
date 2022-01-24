@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: zookeeper-dubbo-demo-consumer
+services:
+  hello:
+    version: 1.0.0
+    group: zookeeper-dubbo
+  test:
+    version: 1.0.0
+    group: zookeeper-dubbo
+dubbo:
+  protocol:
+    port: 20880
+    name: dubbo
+  registry:
+    address: zookeeper://${ZOOKEEPER_SERVER_URL}:${ZOOKEEPER_SERVER_PORT}
+  consumer:
+    retries: ${CONSUMER_RETRIES}
+    check: false
+    parameters:
+      isjoin: ${MESH_SWITCHER_MESH}
+      deploy: ${DEPLOY_TYPE}
+      svcname: ${PAAS_NS}:${MESH_SVC_NAME}

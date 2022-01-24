@@ -12,8 +12,8 @@
     <artifactId>zookeeper-demo</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>zookeeper-dubbo-demo-consumer</module>
-        <module>zookeeper-dubbo-demo-provider</module>
+        <module>zk-dubbo-consumer</module>
+        <module>zk-dubbo-provider</module>
         <module>zookeeper-dubbo-demo-api</module>
     </modules>
 

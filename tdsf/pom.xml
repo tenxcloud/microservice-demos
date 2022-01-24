@@ -12,8 +12,9 @@
         <module>eureka-demo</module>
         <module>zookeeper-demo</module>
         <module>nacos-demo</module>
-        <module>springboot-http-demo</module>
+        <module>springboot-demo</module>
         <module>netty-demo</module>
+        <module>multi-port-demo</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -21,8 +22,9 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <docker.plugin.version>1.2.0</docker.plugin.version>
-        <docker.image.prefix>192.168.1.188/system_containers</docker.image.prefix>
-        <docker.image.tag>v5.2.0</docker.image.tag>
+        <docker.image.prefix>172.22.50.227/zhang</docker.image.prefix>
+        <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
+        <docker.image.tag>v5.3.0</docker.image.tag>
     </properties>
 
     <repositories>
