@@ -1,6 +1,6 @@
 spring:
   application:
-    name: zookeeper-dubbo-demo-provider
+    name: ${MESH_SVC_NAME}
 demo:
   service:
     version: 1.0.0

@@ -12,12 +12,13 @@ ENV OAP_SERVER 192.168.2.142:31082
 
 WORKDIR /workspace
 # Copy the Go Modules manifests
-COPY go.mod go.mod
-COPY go.sum go.sum
+#COPY go.mod go.mod
+#COPY go.sum go.sum
 # cache deps before building and copying source so that we don't need to re-download as much
 # and so that source changes don't invalidate our downloaded layer
+RUN go mod init goclient
 RUN go env -w GOPROXY=https://goproxy.cn,direct
-RUN go mod download
+RUN go mod tidy
 # Copy the go source
 COPY server.go server.go
 

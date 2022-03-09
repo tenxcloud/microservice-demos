@@ -8,7 +8,7 @@ spring:
         namespace: public
         metadata:
           isjoin: true
-          deploy: container
+          deploy: vm
           svcname: default:springcloud-provider
         username: nacos
         password: nacos
