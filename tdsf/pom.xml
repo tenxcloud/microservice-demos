@@ -30,7 +30,7 @@
     <repositories>
         <repository>
             <id>tenxcloud-group</id>
-            <url>http://192.168.2.120:7777/repository/tenxcloud-group/</url>
+            <url>http://dev-nexus.tenxcloud.com/repository/tenxcloud-group/</url>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>

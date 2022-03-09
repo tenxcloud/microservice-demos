@@ -2,4 +2,4 @@ server:
   port: 9101
 spring:
   profiles:
-    active: ${PROFILE:dev}
+    active: ${PROFILE:test}
