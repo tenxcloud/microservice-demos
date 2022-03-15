@@ -1,0 +1,15 @@
+server:
+  port: 80
+  name:
+    serverB: java-demo-b
+    netServerAAddr: dotnet-demo-a
+    netServerBAddr: dotnet-demo-b
+  servlet:
+    context-path: /demoa
+spring:
+  application:
+    name: java-demo-a
+
+
+
+
