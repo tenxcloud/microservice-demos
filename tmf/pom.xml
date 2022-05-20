@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.tenxcloud.clouddemo</groupId>
+    <artifactId>cloud-demo</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>dubbo-demo</module>
+        <module>nacos-demo</module>
+        <module>opentracing-demo</module>
+        <module>tmf-demo-simple</module>
+    </modules>
+
+    <properties>
+        <tenxcloud-sdk.version>v5.4.0</tenxcloud-sdk.version>
+        <commons-lang3.version>3.4</commons-lang3.version>
+        <docker.plugin.version>1.1.0</docker.plugin.version>
+        <docker.image.prefix>dev-registry.tenxcloud.com/system_containers</docker.image.prefix>
+        <docker.image.tag>${maven.build.timestamp}</docker.image.tag>
+        <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <nacos.version>1.4.2</nacos.version>
+        <spring-cloud.version>Hoxton.SR9</spring-cloud.version>
+        <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
+    </properties>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.7.RELEASE</version>
+    </parent>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>tenxcloud-group</id>
+            <url>http://dev-nexus.tenxcloud.com/repository/tenxcloud-group/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>tenxcloud-group</id>
+            <url>http://dev-nexus.tenxcloud.com/repository/tenxcloud-group/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <distributionManagement>
+        <repository>
+            <id>tenxcloud-releases</id>
+            <url>http://dev-nexus.tenxcloud.com/repository/tenxcloud-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>tenxcloud-snapshot</id>
+            <url>http://dev-nexus.tenxcloud.com/repository/tenxcloud-snapshot/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework.cloud</groupId>
+                        <artifactId>spring-cloud-sleuth-zipkin-stream</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>com.tenxcloud</groupId>
+                <artifactId>spring-boot-starter-tenx-master-backup</artifactId>
+                <version>${master-backup.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.70</version>
+            </dependency>
+        </dependencies>
+
+    </dependencyManagement>
+
+
+    <developers>
+        <developer>
+            <id>huhu</id>
+            <name>wuyangwei</name>
+            <timezone>+8</timezone>
+            <roles>
+                <role>developer</role>
+            </roles>
+            <email>huhu.wu@tenxcloud.com</email>
+            <organization>TenxCloud Inc.</organization>
+            <organizationUrl>http://www.tenxcloud.com</organizationUrl>
+        </developer>
+    </developers>
+
+</project>

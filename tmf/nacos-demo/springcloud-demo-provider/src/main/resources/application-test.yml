@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: ${SERVICE_NAME}
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${NACOS_ADDR}
+        namespace: ${NACOS_NAMESPACE}
+        group: ${NACOS_GROUP}
+        username: ${NACOS_USERNAME:nacos}
+        password: ${NACOS_PASSWORD:nacos}
+        clusterName: ${CLUSTER_ID}
+        metadata:
+          isjoin: ${MESH_SWITCHER_MESH}
+          deploy: ${DEPLOY_TYPE}
+          svcname: ${PAAS_NS}:${SERVICE_NAME:springcloud-demo-provider}
+          pod-name: ${HOSTNAME}
+          paas-name: ${SERVICE_NAME:springcloud-demo-consumer}
+          paas-ns: ${PAAS_NS}
+          service-type: SpringCloud

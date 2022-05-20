@@ -1,0 +1,18 @@
+spring:
+  cloud:
+    discovery:
+      master-backup:
+        enabled: ${MASTER_BACKUP_ENABLED:false}
+        serviceMetadataUpdatePeriod: ${MASTER_BACKUP_UPDATE_PERIOD:10}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ${ENDPOINTS_INCLUDE:*}
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+      base-path: ${ENDPOINTS_BASE_PATH:/}
+
+project:
+  version: v1

@@ -1,0 +1,34 @@
+demo:
+  service:
+    version: 1.0.0
+
+dubbo:
+  registry:
+    address: nacos://${NACOS_ADDR:192.168.2.146:31788}?username=${NACOS_USERNAME}&password=${NACOS_PASSWORD}
+    parameters:
+      namespace: ${NACOS_NAMESPACE:885077bed0f3}
+      group: ${NACOS_GROUP:dev}
+      ignoreCheckKeys: username,password
+  scan:
+    base-packages: org.apache.dubbo.spring.boot.sample.provider.service
+  protocol:
+    port: 20880
+    name: dubbo
+  provider:
+    parameters:
+      paas-name: ${SERVICE_NAME:provider}
+      paas-ns: ${PAAS_NS:apm}
+      service-type: Dubbo
+      configs: ${NACOS_NAMESPACE}@${CONFIG_GROUP:DEFAULT_GROUP}@${SERVICE_NAME:provider-sample}
+  application:
+    name: ${SERVICE_NAME:provider-sample}
+
+#nacos:
+#  config:
+#    server-addr: ${NACOS_ADDR:192.168.2.146:31788}?username=nacos&password=nacos
+#    namespace: ${NACOS_NAMESPACE:885077bed0f3}
+server:
+  port: 8082
+spring:
+  profiles:
+    active: ${PROFILE:dev}

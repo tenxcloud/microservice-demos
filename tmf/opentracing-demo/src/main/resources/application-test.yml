@@ -1,0 +1,73 @@
+spring:
+  kafka:
+    bootstrap-servers: ${KAFKA_SERVER:192.168.2.172:9092} #指定kafka server的地址，集群配多个，中间，逗号隔开
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: default_consumer_group #群组ID
+      enable-auto-commit: true
+      auto-commit-interval: 1000
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    listener:
+      missing-topics-fatal: false
+  cloud:
+    discovery:
+      master-backup:
+        enabled: ${MASTER_BACKUP_ENABLED}
+        serviceMetadataUpdatePeriod: ${MASTER_BACKUP_UPDATE_PERIOD:10}
+  jpa:
+    database: MYSQL
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: false
+  application:
+    name: ${spring.cloud.nacos.discovery.service:opentracing-demo}
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${MYSQL_HOST}:${MYSQL_PORT}/${MYSQL_DB}?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+    password: ${MYSQL_PASSWORD}
+    username: ${MYSQL_USERNAME}
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      connection-test-query: SELECT 1 FROM DUAL
+  redis:
+    host: ${REDIS_HOST}
+    port: ${REDIS_PORT}
+    password: ${REDIS_PASSWORD:""}
+    jedis:
+      pool:
+        max-active: 8
+  rabbitmq:
+    host: ${RABBITMQ_HOST}
+    port: ${RABBITMQ_PORT}
+    username: ${RABBITMQ_USERNAME}
+    password: ${RABBITMQ_PASSWORD}
+    virtual-host: ${RABBITMQ_VIRTUAL_HOST}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+      base-path: /
+project:
+  version: v1
+
+rocketmq:
+  name-server: ${ROCKET_ADDR:192.168.4.173:9876}
+  producer:
+    group: producer_group_test
+    send-message-timeout: 6000
+    enable-msg-trace: ${ENABLE_MSG_TRACE:false}
+
+
+

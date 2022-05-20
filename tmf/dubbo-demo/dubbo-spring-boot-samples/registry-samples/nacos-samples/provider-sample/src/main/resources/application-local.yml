@@ -1,0 +1,49 @@
+demo:
+  service:
+    version: 1.0.0
+dubbo:
+  registry:
+    address: nacos://47.105.183.24:8848?username=nacos&password=nacos
+    parameters:
+      namespace: zengbang
+      group: DEFAULT_GROUP
+      username: nacos
+      password: nacos
+  scan:
+    base-packages: org.apache.dubbo.spring.boot.sample.provider.service
+  protocol:
+    port: 20880
+    name: dubbo
+  provider:
+    parameters:
+      paas-name: ${SERVICE_NAME:provider-sample}
+      paas-ns: ${PAAS_NS:apm}
+      service-type: Dubbo
+      username: nacos
+      password: nacos
+      configs: zengbang@DEFAULT_GROUP@provider-sample-local
+  application:
+    name: ${SERVICE_NAME:provider-sample}
+nacos:
+  config:
+    server-addr: 47.105.183.24:8848?username=nacos&password=nacos
+    namespace: zengbang 
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.105.183.24:3306/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&serviceName=spring-clodu-mysql&namespace=${nacos.discovery.namespace}&version=5.6
+    username: root
+    password: 123456
+  redis:
+    host: 47.105.183.24
+    port: 6379
+    password: zb86192732
+    jedis:
+      pool:
+        max-active: 8
+  rabbitmq:
+    host: ${RABBITMQ_HOST:192.168.2.134}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USERNAME:guest}
+    password: ${RABBITMQ_PASSWORD:guest}
+    virtual-host: ${RABBITMQ_VIRTUAL_HOST:} 

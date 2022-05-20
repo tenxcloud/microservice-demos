@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: ${SERVICE_NAME}
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${NACOS_ADDR}
+        namespace: ${NACOS_NAMESPACE}
+        group: ${NACOS_GROUP}
+        username: ${NACOS_USERNAME:nacos}
+        password: ${NACOS_PASSWORD:nacos}
+        clusterName: ${CLUSTER_ID}
+        service: ${SERVICE_NAME}
+        metadata:
+          pod-name: ${HOSTNAME}
+          paas-name: ${SERVICE_NAME:springcloud-demo-consumer}
+          paas-ns: ${PAAS_NS}
+          service-type: SpringCloud
+          isjoin: ${MESH_SWITCHER_MESH}
+          deploy: ${DEPLOY_TYPE}
+          svcname: ${PAAS_NS}:${SERVICE_NAME:springcloud-demo-consumer}
+#模拟故障模拟，设置延时
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 60000
+        readTimeout: 60000

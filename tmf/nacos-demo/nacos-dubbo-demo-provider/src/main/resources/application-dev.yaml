@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: nacos-dubbo-demo-provider
+demo:
+  service:
+    version: 1.0.0
+    group: nacos-dubbo
+
+dubbo:
+  protocol:
+    port: 20880
+    name: dubbo
+  registry:
+    address: nacos://127.0.0.1:8848?username=nacos&password=nacos
+    parameters:
+      namespace: public
+      ignoreCheckKeys: username,password
+  provider:
+    parameters:
+      isjoin: true
+      deploy: container
+      svcname: default:nacos-dubbo-demo-provider
+
+
