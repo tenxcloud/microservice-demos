@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.tenxcloud</groupId>
+    <artifactId>nacos-demo</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <properties>
+        <dubbo.version>2.7.10</dubbo.version>
+        <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
+        <spring-cloud-openfeign.version>2.0.0.RELEASE</spring-cloud-openfeign.version>
+        <spring-cloud-netflix.version>2.0.0.RELEASE</spring-cloud-netflix.version>
+        <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
+        <docker.plugin.version>1.1.0</docker.plugin.version>
+        <docker.image.prefix>dev-registry.tenxcloud.com/system_containers</docker.image.prefix>
+        <docker.image.tag>${maven.build.timestamp}</docker.image.tag>
+        <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
+    </properties>
+
+    <modules>
+        <module>springcloud-demo-consumer</module>
+        <module>springcloud-demo-provider</module>
+        <module>nacos-dubbo-demo-provider</module>
+        <module>nacos-dubbo-demo-consumer</module>
+        <module>nacos-dubbo-demo-api</module>
+    </modules>
+    
+    <repositories>
+        <repository>
+            <id>tenxcloud-group</id>
+            <url>http://dev-nexus.tenxcloud.com/repository/tenxcloud-group/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>tenxcloud-group</id>
+            <url>http://dev-nexus.tenxcloud.com/repository/tenxcloud-group/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <distributionManagement>
+        <repository>
+            <id>tenxcloud-releases</id>
+            <url>http://dev-nexus.tenxcloud.com/repository/tenxcloud-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>tenxcloud-snapshot</id>
+            <url>http://dev-nexus.tenxcloud.com/repository/tenxcloud-snapshot/</url>
+        </snapshotRepository>
+    </distributionManagement>
+    
+    <dependencyManagement>
+        <dependencies>
+            <!--spring-cloud-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- Spring Boot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Apache Dubbo  -->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-dependencies-bom</artifactId>
+                <version>${dubbo.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- Dubbo -->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>javax.servlet</groupId>
+                        <artifactId>servlet-api</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>log4j</groupId>
+                        <artifactId>log4j</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    
+</project>

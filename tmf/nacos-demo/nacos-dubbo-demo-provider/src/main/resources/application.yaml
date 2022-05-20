@@ -1,0 +1,5 @@
+spring:
+  profiles:
+    active: ${PROFILE:dev}
+server:
+  port: 18083

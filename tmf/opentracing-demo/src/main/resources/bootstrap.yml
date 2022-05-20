@@ -1,0 +1,35 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        enabled: ${NACOS_CONFIG_ENABLED:false}
+        server-addr: ${NACOS_ADDR}
+        file-extension: yml
+        namespace: ${NACOS_NAMESPACE}
+        group: ${CONFIG_GROUP:DEFAULT_GROUP}
+        name: ${SERVICE_NAME}-${PROFILE}
+        extension-configs:
+        - dataId: sentinel-rule-${SERVICE_NAME}
+          group:
+          refresh: true
+      discovery:
+        server-addr: ${NACOS_ADDR}
+        namespace: ${NACOS_NAMESPACE}
+        group: ${NACOS_GROUP}
+        service: ${SERVICE_NAME}
+        metadata:
+          pod-name: ${HOSTNAME}
+          paas-name: ${SERVICE_NAME}
+          paas-ns: ${PAAS_NS}
+          service-type: SpringCloud
+          isjoin: ${MESH_SWITCHER_MESH:false}
+          deploy: ${DEPLOY_TYPE:container}
+          svcname: ${PAAS_NS}:nacos-tracing-demo-${DEMO_ALIAS}
+      username: ${NACOS_USERNAME:nacos}
+      password: ${NACOS_PASSWORD:nacos}
+  profiles:
+    active: ${PROFILE:dev}
+  application:
+    name: ${SERVICE_NAME}
+server:
+  port: 8080

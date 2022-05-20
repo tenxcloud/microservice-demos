@@ -1,0 +1,54 @@
+# for Eclipse
+/target/
+.settings
+.classpath
+.project
+
+
+*/target/
+*/.settings
+*/.classpath
+*/.project
+
+
+*/*/target/
+*/*/.settings
+*/*/.classpath
+*/*/.project
+
+
+*/*/*/target/
+*/*/*/.settings
+*/*/*/.classpath
+*/*/*/.project
+
+
+# for Idea
+.idea
+*.iml
+*/.idea
+*/*.iml
+*/*/.idea
+*/*/*.iml
+*/*/*/.idea
+*/*/*/*.iml
+
+# for Spring Tool Suite
+.factorypath
+.springBeans
+*/.factorypath
+*/.springBeans
+*/*/.factorypath
+*/*/.springBeans
+*/*/*/.factorypath
+*/*/*/.springBeans
+
+
+# for Mac
+.DS_Store
+*/.DS_Store
+*/*/.DS_Store
+*/*/*/.DS_Store
+
+
+
