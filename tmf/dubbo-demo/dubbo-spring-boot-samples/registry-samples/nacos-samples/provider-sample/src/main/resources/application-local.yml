@@ -19,8 +19,6 @@ dubbo:
       paas-name: ${SERVICE_NAME:provider-sample}
       paas-ns: ${PAAS_NS:apm}
       service-type: Dubbo
-      username: nacos
-      password: nacos
       configs: zengbang@DEFAULT_GROUP@provider-sample-local
   application:
     name: ${SERVICE_NAME:provider-sample}

@@ -1,4 +1,4 @@
-FROM 192.168.1.52/tenx_containers/oraclejdk:8u151
+FROM 172.22.50.227/system_containers/oraclejdk:8u231
 
 MAINTAINER zhangdalei zhangdalei@tenxcloud.com
 

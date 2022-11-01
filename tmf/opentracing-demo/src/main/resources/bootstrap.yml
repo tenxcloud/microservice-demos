@@ -17,6 +17,7 @@ spring:
         namespace: ${NACOS_NAMESPACE}
         group: ${NACOS_GROUP}
         service: ${SERVICE_NAME}
+        clusterName: ${CLUSTER_ID:demo}
         metadata:
           pod-name: ${HOSTNAME}
           paas-name: ${SERVICE_NAME}

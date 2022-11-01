@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    nacos:
+      username: ${NACOS_USERNAME:nacos}
+      password: ${NACOS_PASSWORD:nacos}
+      discovery:
+        server-addr: ${NACOS_ADDR:localhost:18848}
+        namespace: ${NACOS_NAMESPACE:tenant-xxh6mimndoba}
+        group: ${NACOS_GROUP:DEFAULT_GROUP}
+        service: ${SERVICE_NAME:demo11}
+        clusterName: ${CLUSTER_ID:demo}
+        metadata:
+          paas-name: ${SERVICE_NAME:demo}
+          paas-ns: ${PAAS_NS:system-mf}
+          service-type: SpringCloud

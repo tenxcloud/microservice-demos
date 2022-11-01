@@ -13,7 +13,7 @@
     <properties>
         <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
         <dubbo.version>2.7.10</dubbo.version>
-        <nacos.version>1.4.2</nacos.version>
+        <nacos.version>2.0.4</nacos.version>
         <!-- Build args -->
         <argline>-server -Xms256m -Xmx512m -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true
         </argline>

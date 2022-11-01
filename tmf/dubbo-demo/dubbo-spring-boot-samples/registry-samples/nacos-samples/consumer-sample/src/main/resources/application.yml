@@ -1,33 +1,10 @@
 demo:
   service:
     version: 1.0.0
-
-dubbo:
-  registry:
-    address: nacos://${NACOS_ADDR}?username=${NACOS_USERNAME}&password=${NACOS_PASSWORD}
-    parameters:
-      namespace: ${NACOS_NAMESPACE:885077bed0f3}
-      group: ${NACOS_GROUP:dev}
-      ignoreCheckKeys: username,password
-  protocol:
-    id: dubbo
-    name: dubbo
-    port: 20880
-  consumer:
-    parameters:
-      paas-name: ${SERVICE_NAME:consumer-sample}
-      paas-ns: ${PAAS_NS:apm}
-      service-type: Dubbo
-      configs: ${NACOS_NAMESPACE}@${CONFIG_GROUP:DEFAULT_GROUP}@${SERVICE_NAME}-${PROFILE}
-    check: false
-  application:
-    qosEnable: false
-    name: ${SERVICE_NAME:consumer-sample}
 server:
   port: 8081
-
 spring:
   application:
-    name: ${SERVICE_NAME}
+    name: ${SERVICE_NAME:consumer-sample-demo}
   profiles:
-    active: ${PROFILE}
+    active: ${PROFILE:test}

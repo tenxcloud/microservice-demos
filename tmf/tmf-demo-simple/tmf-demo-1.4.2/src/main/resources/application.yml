@@ -2,8 +2,11 @@ spring:
   cloud:
     discovery:
       master-backup:
-        enabled: ${MASTER_BACKUP_ENABLED:false}
+        enabled: ${MASTER_BACKUP_ENABLED:true}
         serviceMetadataUpdatePeriod: ${MASTER_BACKUP_UPDATE_PERIOD:10}
+      nacos-cluster:
+        enabled: ${NACOS_CLUSTER_ENABLED:true}
+        
 management:
   endpoints:
     web:
@@ -13,6 +16,12 @@ management:
         allowed-origins: "*"
         allowed-methods: "*"
       base-path: ${ENDPOINTS_BASE_PATH:/}
+
+tenx:
+  spring:
+    cloud:
+      sentinel:
+        enabled: ${SENTINEL_ENABLED:true}
 
 project:
   version: v1
