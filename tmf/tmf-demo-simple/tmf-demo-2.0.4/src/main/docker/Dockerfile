@@ -1,4 +1,4 @@
-FROM 192.168.1.52/tenx_containers/oraclejdk:8u151
+FROM 172.22.50.227/system_containers/oraclejdk:8u231
 MAINTAINER tmf tmf@tenxcloud.com
 
 ENV PROFILE=test \
@@ -15,6 +15,8 @@ ENV PROFILE=test \
  NACOS_CONFIG_FILE_EXTENSION=yml \
  MASTER_BACKUP_ENABLED=true \
  MASTER_BACKUP_UPDATE_PERIOD=10 \
+ NACOS_CLUSTER_ENABLED=true\
+ SENTINEL_ENABLED=true\
  NACOS_USERNAME=nacos \
  NACOS_PASSWORD=nacos \
  ENDPOINTS_INCLUDE=* \
