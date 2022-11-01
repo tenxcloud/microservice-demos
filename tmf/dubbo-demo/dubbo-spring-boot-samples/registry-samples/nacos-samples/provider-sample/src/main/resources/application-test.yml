@@ -23,8 +23,6 @@ dubbo:
       paas-name: ${SERVICE_NAME:provider-sample}
       paas-ns: ${PAAS_NS:apm}
       service-type: Dubbo
-      username: ${NACOS_USERNAME}
-      password: ${NACOS_PASSWORD}
       configs: ${NACOS_NAMESPACE}@${CONFIG_GROUP:DEFAULT_GROUP}@${SERVICE_NAME}-${PROFILE}
   application:
     name: ${SERVICE_NAME:provider-sample}

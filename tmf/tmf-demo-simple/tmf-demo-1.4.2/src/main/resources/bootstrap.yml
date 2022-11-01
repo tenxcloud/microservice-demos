@@ -1,5 +1,5 @@
 server:
-  port: 8405
+  port: 8401
 spring:
   application:
     name: ${SERVICE_NAME:demo}
@@ -9,22 +9,10 @@ spring:
     nacos:
       username: ${NACOS_USERNAME:nacos}
       password: ${NACOS_PASSWORD:nacos}
-#      username: ${NACOS_USERNAME:fSzROe8LSrsr}
-#      password: ${NACOS_PASSWORD:TiMboqpOPY4k}
       config:
+        server-addr: ${NACOS_ADDR:175.178.212.47:8849}
         enabled: ${NACOS_CONFIG_ENABLED:true}
-        server-addr: ${NACOS_ADDR:localhost:18848}
         file-extension: ${NACOS_CONFIG_FILE_EXTENSION:yml}
-        namespace: ${NACOS_NAMESPACE:public}
         group: ${CONFIG_GROUP:DEFAULT_GROUP}
-        name: ${SERVICE_NAME:demo}-${PROFILE:test}
-      discovery:
-        server-addr: ${NACOS_ADDR:localhost:18848}
-        namespace: ${NACOS_NAMESPACE:public}
-        group: ${NACOS_GROUP:DEFAULT_GROUP}
-        service: ${SERVICE_NAME:tmf}
-        clusterName: ${CLUSTER_ID:demo}
-        metadata:
-          paas-name: ${SERVICE_NAME:demo}
-          paas-ns: ${PAAS_NS:paas}
-          service-type: SpringCloud
+        name: ${SERVICE_NAME:demo}
+        namespace: ${NACOS_NAMESPACE:demo}
