@@ -1,4 +1,4 @@
-FROM 192.168.1.52/system_containers/oraclejdk:8u231
+FROM airdock/oraclejdk:1.8
 
 MAINTAINER sparkxiong shi.xiong@tenxcloud.com
 

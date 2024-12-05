@@ -1,4 +1,4 @@
-FROM 172.22.50.227/system_containers/oraclejdk:8u231
+FROM airdock/oraclejdk:1.8
 
 MAINTAINER zhangdalei zhangdalei@tenxcloud.com
 
