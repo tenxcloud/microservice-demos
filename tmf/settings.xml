@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+	
+	<pluginGroups>
+	
+	</pluginGroups>
+	
+	<proxies>
+	
+	</proxies>
+	<mirrors>
+		<mirror>
+			<id>nexus-tenxcloud</id>
+			<mirrorOf>*</mirrorOf>
+			<name>Nexus tenxcloud</name>
+			<url>http://dev-nexus.tenxcloud.com/repository/tenxcloud-group/</url>
+		</mirror>
+	    <mirror>
+          <id>nexus-aliyun</id>
+          <mirrorOf>central</mirrorOf>
+          <name>Nexus aliyun</name>
+          <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+        </mirror>
+	</mirrors>
+	<profiles>
+	    <profile>
+			<id>jdk-1.8</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+				<jdk>1.8</jdk>
+			</activation>
+			<properties>
+				<maven.compiler.source>1.8</maven.compiler.source>
+				<maven.compiler.target>1.8</maven.compiler.target>
+				<maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+			</properties>
+		</profile>
+	</profiles>
+</settings>
