@@ -28,17 +28,14 @@
     <repositories>
         <repository>
             <id>tenxcloud-group</id>
-            <url>http://dev-nexus.tenxcloud.com/repository/tenxcloud-group/</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
+            <url>http://172.22.222.103:8081/repository/tenxcloud-group/</url>
         </repository>
     </repositories>
 
     <pluginRepositories>
         <pluginRepository>
             <id>tenxcloud-group</id>
-            <url>http://dev-nexus.tenxcloud.com/repository/tenxcloud-group/</url>
+            <url>http://172.22.222.103:8081/repository/tenxcloud-group/</url>
         </pluginRepository>
     </pluginRepositories>
 

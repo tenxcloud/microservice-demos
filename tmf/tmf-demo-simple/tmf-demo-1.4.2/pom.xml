@@ -19,7 +19,8 @@
     <dependencies>
         <dependency>
             <groupId>com.tenxcloud</groupId>
-            <artifactId>spring-boot-starter-tenx-master-backup-1.4.2</artifactId>
+            <artifactId>spring-boot-starter-tenx-master-backup</artifactId>
+            <version>${tenxcloud-sdk.version}</version>
         </dependency>
     
         <dependency>

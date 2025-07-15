@@ -17,7 +17,7 @@
     </modules>
 
     <properties>
-        <tenxcloud-sdk.version>v5.6.0-SNAPSHOT</tenxcloud-sdk.version>
+        <tenxcloud-sdk.version>v5.5.0</tenxcloud-sdk.version>
         <commons-lang3.version>3.4</commons-lang3.version>
         <docker.plugin.version>1.1.0</docker.plugin.version>
         <docker.image.prefix>dev-registry.tenxcloud.com/system_containers</docker.image.prefix>
@@ -49,27 +49,24 @@
     <repositories>
         <repository>
             <id>tenxcloud-group</id>
-            <url>http://dev-nexus.tenxcloud.com/repository/tenxcloud-group/</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
+            <url>http://172.22.222.103:8081/repository/tenxcloud-group/</url>
         </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
             <id>tenxcloud-group</id>
-            <url>http://dev-nexus.tenxcloud.com/repository/tenxcloud-group/</url>
+            <url>http://172.22.222.103:8081/repository/tenxcloud-group/</url>
         </pluginRepository>
     </pluginRepositories>
 
     <distributionManagement>
         <repository>
             <id>tenxcloud-releases</id>
-            <url>http://dev-nexus.tenxcloud.com/repository/tenxcloud-releases/</url>
+            <url>http://172.22.222.103:8081/repository/tenxcloud-releases/</url>
         </repository>
         <snapshotRepository>
             <id>tenxcloud-snapshot</id>
-            <url>http://dev-nexus.tenxcloud.com/repository/tenxcloud-snapshot/</url>
+            <url>http://172.22.222.103:8081/repository/tenxcloud-snapshot/</url>
         </snapshotRepository>
     </distributionManagement>
 
@@ -92,13 +89,6 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>1.2.70</version>
-            </dependency>
-            <dependency>
-                <groupId>com.tenxcloud</groupId>
-                <artifactId>tenxcloud-sdks-bom</artifactId>
-                <version>v5.6.0-SNAPSHOT</version>
-                <scope>import</scope>
-                <type>pom</type>
             </dependency>
             <!--调用链-->
             <dependency>
