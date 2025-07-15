@@ -14,9 +14,9 @@
 	<mirrors>
 		<mirror>
 			<id>nexus-tenxcloud</id>
-			<mirrorOf>*</mirrorOf>
+			<mirrorOf>central</mirrorOf>
 			<name>Nexus tenxcloud</name>
-			<url>http://dev-nexus.tenxcloud.com/repository/tenxcloud-group/</url>
+			<url>http://172.22.222.103:8081/repository/tenxcloud-group/</url>
 		</mirror>
 	    <mirror>
           <id>nexus-aliyun</id>

@@ -20,7 +20,8 @@
     
         <dependency>
             <groupId>com.tenxcloud</groupId>
-            <artifactId>spring-boot-starter-tenx-master-backup-2.0.4</artifactId>
+            <artifactId>spring-boot-starter-tenx-master-backup</artifactId>
+            <version>${tenxcloud-sdk.version}</version>
         </dependency>
     
         <dependency>
